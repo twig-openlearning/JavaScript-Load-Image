@@ -17,7 +17,7 @@
         // Register as an anonymous AMD module:
         define(['load-image', 'load-image-meta'], factory);
     } else if (typeof module === 'object' && module.exports) {
-        factory(require('./load-image'), require('./load-image-meta'));
+        factory(require('./load-image'), require('imports?define=>false!./load-image-meta'));
     } else {
         // Browser globals:
         factory(window.loadImage);
